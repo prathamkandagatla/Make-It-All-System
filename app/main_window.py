@@ -8,6 +8,7 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
 
 from app.screens.main_menu import createMainMenuPage
+from app.screens.managers_dashboard import managersDashboard
 
 assetsDir = Path(__file__).resolve().parent / "assets"
 
@@ -27,7 +28,7 @@ Dropdown = ("information", [
 pagesByRole = {
     "Manager": [
         ("Home", createMainMenuPage),
-        ("Dashboard", lambda: createPlaceholderPage("Dashboard")),
+        ("Dashboard", managersDashboard),
         ("To-do", lambda: createPlaceholderPage("To-do")),
         ("Project-To-do", lambda: createPlaceholderPage("To-do, can add tasks to project")),
         Dropdown,

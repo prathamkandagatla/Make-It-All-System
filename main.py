@@ -33,6 +33,7 @@ def main():
     def openMainWindow(user):
         mainWindow = createMainWindow(user["role"])
         openWindows["main"] = mainWindow
+        #formatting choice to follow the log in page style
         mainWindow.showMaximized()
         authWindow.close()
  

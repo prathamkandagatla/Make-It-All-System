@@ -9,6 +9,7 @@ from app import auth
 
 class LoginScreen(QWidget):
     joinRequested = Signal()  
+    loggedIn = Signal(dict)  # sends the users data to main when user logs in successfully to pull priorities
 
     def __init__(self, parent=None):
         super(LoginScreen, self).__init__(parent)
@@ -108,12 +109,13 @@ class LoginScreen(QWidget):
             return
 
         self.errorLabel.setText("")
-        print(f"Logged in as {user['name']}") #Output for correct Login -> Modify to load the appropriate page according to user role
+        self.loggedIn.emit(user) #Output for correct Login -> Modify to load the appropriate page according to user role
 
 
 
 
 if __name__ == '__main__':
+    from app.screens.register import RegisterScreen #added to test screen without import error
     app = QApplication(sys.argv)
     app.setStyleSheet((Path(__file__).resolve().parent.parent / "styles.qss").read_text())
     # Create and show the form

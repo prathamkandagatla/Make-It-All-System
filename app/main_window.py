@@ -25,14 +25,14 @@ Dropdown = ("information", [
 
 #edits drop down for both manager and employee roles
 pagesByRole = {
-    "manager": [
+    "Manager": [
         ("Home", createMainMenuPage),
         ("Dashboard", lambda: createPlaceholderPage("Dashboard")),
         ("To-do", lambda: createPlaceholderPage("To-do")),
         ("Project-To-do", lambda: createPlaceholderPage("To-do, can add tasks to project")),
         Dropdown,
     ],
-    "employee": [
+    "Employee": [
         ("Home", createMainMenuPage),
         ("To-do", lambda: createPlaceholderPage("To-do")),
         ("Topics", lambda: createPlaceholderPage("Topics")),
@@ -129,6 +129,6 @@ if __name__ == "__main__":
     with open(stylesPath) as f:
         app.setStyleSheet(f.read())
  
-    window = createMainWindow("manager")
+    window = createMainWindow("Manager")
     window.show()
     sys.exit(app.exec())

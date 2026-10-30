@@ -62,7 +62,7 @@ def registerUser(name, email, password):
         "email": email.strip().lower(),
         "password": password,           
         "name": name.strip(),
-        "employeeType": "Employee",     # always Employee: users can't make themselves managers
+        "role": "Employee",     # always Employee: users can't make themselves managers, changed to Role to match the data stored in data.py
         "teamIds": [],                  # assigned later by a manager
     }
     USERS.append(newUser)               # in memory only, lasts until the app closes

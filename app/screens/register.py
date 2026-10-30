@@ -4,9 +4,8 @@ from PySide6.QtWidgets import QApplication, QFrame, QWidget, QLineEdit, QFormLay
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt, Signal
 from pathlib import Path
-from app.screens.login import LoginScreen 
 from app import auth
-
+#deleted import of login screen as it is now redundant due to addition of main
 class RegisterScreen(QWidget):
     joinRequested = Signal()
 
@@ -158,7 +157,7 @@ class RegisterScreen(QWidget):
 
 
 if __name__ == '__main__':
-
+    from app.screens.login import LoginScreen #imported login screen in order to allow isolated testing of register screen
     app = QApplication(sys.argv)
     app.setStyleSheet((Path(__file__).resolve().parent.parent / "styles.qss").read_text())
     # Create and show the form

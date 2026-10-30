@@ -1,6 +1,7 @@
 /* Global Qt stylesheet: colours, fonts and widget styles for the whole app. */
 
 
+
 /* -Prathams styles: */
 QFrame#card {
     background-color: #f5a623;
@@ -25,10 +26,102 @@ QWidget#window{
 
 }
 
-QLabel#heading{
-    color: #e6e6e6 ;
-    font-size: 20px;
-    
-}
 
 /* end of Prathams styles */
+
+
+
+/* -andy's styles: */
+
+QWidget {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #1e1e1e;               /* dark text for a light background */
+}
+
+/* ---------- Login and register screens ---------- */
+
+#loginScreen, #registerScreen {
+    background-color: #ffffff;
+}
+
+/* Labels on the forms ("Email", "Password") */
+#loginScreen QLabel, #registerScreen QLabel {
+    color: #555555;               /* readable on white */
+    font-size: 13px;
+}
+
+/* Text inputs (same object names on both screens) */
+#emailInput, #passwordInput, #confirmPasswordInput, #nameInput {
+    background-color: #ffffff;
+    color: #1e1e1e;               /* typed text */
+    border: 1px solid #000000;    /* black border */
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 20px;          /* gap below each input */
+}
+
+/* Highlight the input being typed in */
+#emailInput:focus, #passwordInput:focus, #confirmPasswordInput:focus, #nameInput:focus {
+    border: 1px solid #f5a623;
+}
+
+/* Highlight the input being typed in */
+#emailInput:focus, #passwordInput:focus {
+    border: 1px solid #f5a623;
+}
+
+/* Main action buttons */
+#loginButton, #registerButton {
+    background-color: #f5a623;
+    color: #1e1e1e;
+    border: 1px solid #000000;    /* black border */
+    border-radius: 6px;
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 20px;             /* extra gap above the button */
+}
+
+#loginButton:hover, #registerButton:hover {
+    background-color: #ffb84d;
+}
+
+#loginButton:pressed, #registerButton:pressed {
+    background-color: #d98e12;
+}
+
+/* Error message under the form (for when validation is added) */
+#loginScreen #errorLabel, #registerScreen #errorLabel {
+    color: #d32f2f;               /* darker red, readable on white */
+}
+
+
+/* The card around each form */
+#loginBox, #registerBox {
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 1px;
+}
+
+#linkButton {
+    background: transparent;
+    border: none;
+    color: #1a73e8;
+    text-decoration: underline;
+    margin-top: 12px;
+}
+
+#linkButton:hover {
+    color: #0b57d0;
+}
+
+/* Password guidance under the password field */
+#registerScreen #hintLabel {
+    color: #777777;
+    font-size: 12px;
+    margin-bottom: 16px;          /* separates the hint from the next field's label */
+}
+
+
+
+/* end of andy's styles */

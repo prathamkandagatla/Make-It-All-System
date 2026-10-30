@@ -1,27 +1,27 @@
 """Shared helpers used across screens, e.g. formatting dates for display."""
+from app.data import tasks
 
-#  function that returns how many tasks a project has by pratham
+# -returns the list of tasks that belong to a project
+def getProjectTasks(project):
+    return [task for task in tasks if task["projectId"] == project["id"]]
+ 
+ # -returns the list of the tasks that belong to a project.
 def countTasks(project):
-    return len(project["tasks"])
-
-#Counts tasks by each status (todo / done) 
-#for a breakdown under the bar by pratham
+    return len(getProjectTasks(project))
+ 
+ # -returns how many of a project's tasks have the given status ("todo" or "done").
 def countTasksByStatus(project, status):
-    return len([task for task in project["tasks"] if task["status"] == status])
-
-
-# A function that returns how many tasks are "done" by pratham
-
+    
+    return len([task for task in getProjectTasks(project) if task["status"] == status])
+ 
+ # -returns how many of a project's tasks are done.
 def countDoneTasks(project):
     return countTasksByStatus(project, "done")
-
-
-#A function that returns the percentage of tasks done by pratham
+ 
+ # -returns what percentage of a project's tasks are done (0 if it has no tasks(test case)).
 def getPercentage(project):
     totalTasks = countTasks(project)
     if totalTasks == 0:
         return 0
-    else:
-        tasksDone = countDoneTasks(project)
-        percentage = (tasksDone / totalTasks) * 100
-        return round(percentage)
+    tasksDone = countDoneTasks(project)
+    return round((tasksDone / totalTasks) * 100)

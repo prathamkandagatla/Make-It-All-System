@@ -9,7 +9,7 @@ from app.utils import getPercentage, countDoneTasks, countTasks
  
  
 
-def createMenu():
+def createMainMenuPage():
     """Builds the main menu (project progress) page and returns it as a widget."""
     page = QWidget()
     layout = QVBoxLayout()
@@ -44,17 +44,3 @@ def createMenu():
  
     layout.addStretch()
     return page
-# test by running python -m app.screens.main_menu
-if __name__ == "__main__":
-    import sys
-    from pathlib import Path
-    from PySide6.QtWidgets import QApplication
-
-    app = QApplication(sys.argv)
-    stylesPath = Path(__file__).resolve().parent.parent / "styles.qss"  # up two levels: screens -> app
-    with open(stylesPath) as f:
-        app.setStyleSheet(f.read())
-
-    window = createMenu()
-    window.show()
-    sys.exit(app.exec())

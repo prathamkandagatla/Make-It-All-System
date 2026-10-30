@@ -10,7 +10,7 @@ QFrame#card {
 }
 
 QProgressBar {
-    background-color: rgb(207, 207, 207);
+    background-color: #ffffff;
     border: none;
     border-radius: 6px;
     text-align: center;
@@ -21,7 +21,7 @@ QProgressBar::chunk {
     border-radius: 6px;
 }
 QWidget#window{
-    background-color: #111111;
+    background-color: #ffffff;
 
 }
 

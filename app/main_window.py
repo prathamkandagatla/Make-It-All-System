@@ -9,6 +9,8 @@ from PySide6.QtCore import Qt
 
 from app.screens.main_menu import createMainMenuPage
 from app.screens.managers_dashboard import managersDashboard
+from app.screens.todo import ToDoList
+from app.screens.team_todo import TeamToDoList
 
 assetsDir = Path(__file__).resolve().parent / "assets"
 
@@ -19,7 +21,7 @@ def createPlaceholderPage(name):
     return QLabel(f"{name} page coming soon")
 
 #temporary test drop down
-Dropdown = ("information", [
+Dropdown = ("foreums", [
     ("technical", lambda: createPlaceholderPage("technical")),
     ("non-technical", lambda: createPlaceholderPage("non-technical")),
 ])
@@ -29,14 +31,14 @@ pagesByRole = {
     "Manager": [
         ("Home", createMainMenuPage),
         ("Dashboard", managersDashboard),
-        ("To-do", lambda: createPlaceholderPage("To-do")),
-        ("Project-To-do", lambda: createPlaceholderPage("To-do, can add tasks to project")),
+        ("To-do", ToDoList),
+        ("Project-To-do", TeamToDoList),
         Dropdown,
     ],
     "Employee": [
         ("Home", createMainMenuPage),
-        ("To-do", lambda: createPlaceholderPage("To-do")),
-        ("Topics", lambda: createPlaceholderPage("Topics")),
+        ("To-do", ToDoList),
+        ("Project-To-do", TeamToDoList),
         Dropdown,
     ],
 }

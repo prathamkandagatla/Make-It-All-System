@@ -67,13 +67,15 @@ class TeamToDoList(QWidget):
         layout.addWidget(self.taskList)
 
         self.setLayout(layout)
+        
+# changed as it made 2 qApplication instances which leads to an error.
+# Run this file on its own with: python -m app.screens.team_todo
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    app.setStyle("Fusion")
+    window = TeamToDoList()
+    window.show()
 
-
-app = QApplication(sys.argv)
-app.setStyle("Fusion")
-window = TeamToDoList()
-window.show()
-
-sys.exit(app.exec())
+    sys.exit(app.exec())
 
 

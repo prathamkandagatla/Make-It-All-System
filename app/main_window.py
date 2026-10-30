@@ -52,7 +52,7 @@ def createSidebarLogo():
     logo = QLabel()
     logo.setObjectName("sidebarLogo")
     logo.setAlignment(Qt.AlignCenter)
-    pixmap = QPixmap(str(assetsDir / "logo.png"))
+    pixmap = QPixmap(str(assetsDir / "Make-It-All-logo.png"))
     if pixmap.isNull():
         logo.setText("Make-It-All")  # fallback if the logo file does not load or is missing
     else:

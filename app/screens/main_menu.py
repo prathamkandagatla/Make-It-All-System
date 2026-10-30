@@ -18,7 +18,7 @@ def createMainMenuPage():
  
     header = QVBoxLayout()
     heading = QLabel("Menu")
-    heading.setObjectName("heading")
+    
     header.addWidget(heading)
     header.setAlignment(Qt.AlignHCenter)
     layout.addLayout(header)
